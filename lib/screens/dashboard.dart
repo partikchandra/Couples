@@ -91,8 +91,8 @@ class Dashboard extends StatelessWidget {
 
               // Overlapping "234 days together" text
               Container(
-                margin:
-                    EdgeInsets.only(top: -50), // Adjust this margin as needed
+                // margin:
+                //     EdgeInsets.only(top: -50), // Adjust this margin as needed
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
