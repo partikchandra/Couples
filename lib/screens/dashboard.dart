@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+// Import statements...
 
 class Dashboard extends StatelessWidget {
   @override
@@ -9,23 +10,6 @@ class Dashboard extends StatelessWidget {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            // Left side: Person Carousel
-            Stack(
-              children: [
-                CircleAvatar(
-                  radius: 15,
-                  backgroundColor: Colors.blue,
-                ),
-                Positioned(
-                  left: 12,
-                  child: CircleAvatar(
-                    radius: 15,
-                    backgroundColor: Colors.green,
-                  ),
-                ),
-              ],
-            ),
-            // Right side: Setting Carousel
             IconButton(
               icon: Icon(Icons.settings),
               onPressed: () {
@@ -41,7 +25,6 @@ class Dashboard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              // Display a circle
               Container(
                 decoration: BoxDecoration(
                   color: Colors.black54,
@@ -51,34 +34,29 @@ class Dashboard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      width: 80,
-                      height: 40,
+                      height: 150,
                       color: Colors.white,
                       child: Stack(
                         alignment: Alignment.center,
                         children: [
-                          CircleAvatar(
-                            backgroundColor: Colors.red,
-                            radius: 18,
-                            child: Image.asset(
-                                'assets/image.png'), // Provide your custom image
-                          ),
                           Positioned(
-                            left: 20,
-                            child: CircleAvatar(
-                              backgroundColor: Colors.red,
-                              radius: 18,
-                              child: Image.asset(
-                                  'assets/image.png'), // Provide your custom image
+                            right: 130.0,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(200)),
+                              ),
+                              child: Image.asset('lib/assets/male.png'),
                             ),
                           ),
                           Positioned(
-                            right: 20,
-                            child: CircleAvatar(
-                              backgroundColor: Colors.red,
-                              radius: 18,
-                              child: Image.asset(
-                                  'assets/image.png'), // Provide your custom image
+                            left: 130.0,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(200)),
+                              ),
+                              child: Image.asset('lib/assets/male.png'),
                             ),
                           ),
                         ],
@@ -87,10 +65,7 @@ class Dashboard extends StatelessWidget {
                   ],
                 ),
               ),
-
-              // Overlapping "234 days together" text
               Container(
-                // margin: EdgeInsets.only(top: -50),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -113,54 +88,56 @@ class Dashboard extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20),
-
-              // Automatic moving carousel
               CarouselSlider(
                 options: CarouselOptions(
+                  height: 80,
                   autoPlay: true,
                   enlargeCenterPage: true,
                   aspectRatio: 2.0,
                 ),
                 items: [
-                  Text('Carousel Item 1'),
-                  Text('Carousel Item 2'),
-                  Text('Carousel Item 3'),
-                  // Add more carousel items as needed
+                  Container(child: Image.asset('your_image_path_here')),
+                  Container(child: Image.asset('your_image_path_here')),
+                  Container(child: Image.asset('your_image_path_here')),
                 ],
               ),
               SizedBox(height: 20),
-
-              // Two columns with heading and content
               Row(
                 children: [
                   Expanded(
-                    child: Column(
-                      children: [
-                        Text(
-                          'Column 1 Heading',
-                          style: TextStyle(fontSize: 15),
-                        ),
-                        Text('Column 1 Content'),
-                      ],
+                    child: Container(
+                      color: Colors.red,
+                      height: 200,
+                      child: Column(
+                        children: [
+                          Text(
+                            'Column 1 Heading',
+                            style: TextStyle(fontSize: 15),
+                          ),
+                          Text('Column 1 Content'),
+                        ],
+                      ),
                     ),
                   ),
-                  SizedBox(width: 20),
+                  SizedBox(width: 5),
                   Expanded(
-                    child: Column(
-                      children: [
-                        Text(
-                          'Column 2 Heading',
-                          style: TextStyle(fontSize: 15),
-                        ),
-                        Text('Column 2 Content'),
-                      ],
+                    child: Container(
+                      color: Colors.blue,
+                      height: 200,
+                      child: Column(
+                        children: [
+                          Text(
+                            'Column 2 Heading',
+                            style: TextStyle(fontSize: 15),
+                          ),
+                          Text('Column 2 Content'),
+                        ],
+                      ),
                     ),
                   ),
                 ],
               ),
               SizedBox(height: 20),
-
-              // List instead of carousel
               Container(
                 height: 68,
                 child: ListView(
@@ -186,7 +163,6 @@ class Dashboard extends StatelessWidget {
                       color: Colors.purple,
                       child: Center(child: Text('Text 5')),
                     ),
-                    // Add more list items as needed
                   ],
                 ),
               ),
